@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(){
+    int rows=5,cols=5,seatcount=0;
+    char seats[5][5]={{'x','o','x','o','x'},{'o','x','o','x','o'},{'x','o','x','o','x'},{'o','x','o','x','o'},{'x','o','x','o','x'}};
+    for (int i=0;i<5;i++){
+        for (int j=0;j<5;j++){
+            if (seats[i][j]=='x'){
+                seatcount+=1;
+            }
+        }
+    }
+    for (int i=0;i<5;i++){
+        for (int j=0;j<5;j++){
+            printf("%c ",seats[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Total Seats: %d\n",rows*cols);
+    printf("Total number of booked seats: %d\n",seatcount);
+    printf("Total number of available seats: %d\n",(rows*cols)-seatcount);
+    return 0;
+}
