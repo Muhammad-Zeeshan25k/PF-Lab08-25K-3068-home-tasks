@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+    int tempgrid[4][4]={{12, 15, 10, 9},{11, 8, 12, 13},{14, 13, 9, 7},{16, 11, 10, 8}};
+    printf("Cold Spots found:\n");
+    for (int i=0;i<4;i++ ){
+        for (int j=0;j<4;j++){
+            if (tempgrid[i][j]<tempgrid[i][j+1] && tempgrid[i][j]<tempgrid[i][j-1] && tempgrid[i][j]<tempgrid[i-1][j] && tempgrid[i][j]<tempgrid[i+1][j] ){
+                printf("The temperature is low in the grid at (%d,%d) is %d celcius \n",i+1,j+1,tempgrid[i][j]);
+            }
+        }
+    }
+    return 0;
+}
